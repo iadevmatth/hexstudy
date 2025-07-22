@@ -28,7 +28,6 @@ class SinocastelParser:
 
     def _parse_vstate(self, vstate_value):
         states = []
-        # A máscara para ACC ON em little-endian (0x00040200) está correta
         if (vstate_value & 0x00040000):
             states.append("ACC ON")
         
