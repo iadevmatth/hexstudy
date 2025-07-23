@@ -159,7 +159,7 @@ class TCPHandler(socketserver.BaseRequestHandler):
             print(f"[!] Erro na conexão com {self.client_address[0]}: {e}")
 
 if __name__ == "__main__":
-    HOST, PORT = "0.0.0.0", 29479 
+    HOST, PORT = "127.0.0.1", 29479 
 
     print("==============================================")
     print(f"   Servidor de Escuta OBD Iniciado")

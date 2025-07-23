@@ -1,0 +1,129 @@
+4040 //protocol_head
+
+9B00 //protocol_length
+
+04 //protocol_version
+
+3231334744503230313830323133343300000000 //device_id,STR_F,213GDP2018021343
+
+1001 //protocol_id ,login package
+
+A3311B5D //last_accon_time
+
+AD321B5D //UTC_Time
+
+6F3D0000 //total_trip_mileage
+
+10020000 //current_trip_mileage
+
+C2010000 //total_fuel
+
+0A00 //current_fuel
+
+00000400 //vstate
+
+00 00 04 00
+
+S0 S1 S2 S3
+
+    
+
+S2  0000 0100   ACC ON
+
+
+
+calculate the vehicle state, if the value is 00000400 then S0 = 00, s1 = 00, s2 = 04, s3 = 00 which means the error is Bit2 of S2 which is Ignition On
+calcule o estado do veículo, se o valor for 00000400 então S0 = 00, s1 = 00, s2 = 04, s3 = 00 o que significa que o erro é Bit2 de S2 que é Ignição Ligada
+
+
+from right to the left , the third bit(bit2) is 1 , i means the alarms trigger
+da direita para a esquerda, o terceiro bit (bit2) é 1, ou seja, o alarme dispara
+
+
+
+
+
+073B015700000000 //reserved,07 ,ISO9141 (passenger car)��
+
+                    3B//Vehicle voltage��3E ��HEX��-59(DEC),59*0.1=5.9V��5.9+8=13.9V��
+
+                    01 //Network frequency information��01--CDMA BC0 ��
+
+                    57//hardware code��refer to hardware code table.5--213GD,7---SIM800L��
+
+                    00//cellular signal strength��
+
+                    00// BER of cellular communication��
+
+                    0000 //0000 0000 0000 0000��bit0=0,OBD disconnected��bit1=0,no RPM��bit2=0,GPS normal��bit3=0��RTC is normal��bit4=0��system voltage is normal��bit5=0 ��bit6=0��bit7=0��bit8=0��bit9=0��...��
+
+
+
+01 //gps_count
+
+020713 //date
+
+0A200A //time
+
+3283C302 //latitude
+
+3007A910 //longitude
+
+3D02 //speed
+
+5C06 //direction
+
+AF //flag .10101111,Bit0: 1-east longitude 
+
+Bit1: 1-north latitude
+
+Bit2-3:11-3D fix
+
+Bit4-7: number of satellites.10 
+
+
+
+4944445F3231335730315F532056322E312E3700 //software_version,IDD_213W01_S V2.1.7
+
+4944445F3231335730315F482056322E312E3700 //hardward_version,IDD_213W01_H V2.1.7
+
+0E00 //new_parameter_count,14
+
+0118 //1801,SMS alarm switch
+
+0218 //1802,Phone book
+
+011A
+
+011B
+
+011E
+
+011F
+
+021F
+
+031F
+
+041F
+
+051F
+
+061F
+
+071F
+
+0121
+
+0221
+
+7B29 //crc
+
+0D0A //protocol_tail
+
+
+
+When decoding, you do not have to parse the meaning of all the fields. But the format must be decoded strictly in accordance with the format of the communication protocol. When the field does not exist, skip it. The simulator only simulates a situation contained in the communication protocol. Communication protocols are fundamental. The emulator should be used to detect whether the server integration conforms to the communication protocol standards. Instead of the other way around, calibrate the communication protocol with the simulator.
+
+
+
